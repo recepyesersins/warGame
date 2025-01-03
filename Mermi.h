@@ -1,3 +1,4 @@
+// Mermi.h
 #ifndef MERMI_H
 #define MERMI_H
 
@@ -5,10 +6,14 @@
 
 class Mermi : public OyunNesnesi {
 public:
-    Mermi(int x, int y) : OyunNesnesi(x, y, '*') {}
+    Mermi(int baslangicX, int baslangicY) : OyunNesnesi(baslangicX, baslangicY) {}
 
-    void ileriHareketEt() {
-        x++; // Mermi sağa hareket eder
+    void guncelle() override {
+        x += 2;
+    }
+
+    bool ekranDisindaMi() const {
+        return x > 33;
     }
 };
 

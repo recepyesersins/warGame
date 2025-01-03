@@ -1,3 +1,4 @@
+// Dusman.h
 #ifndef DUSMAN_H
 #define DUSMAN_H
 
@@ -5,14 +6,14 @@
 
 class Dusman : public OyunNesnesi {
 public:
-    Dusman(int x, int y) : OyunNesnesi(x, y, 'E') {}
+    Dusman(int baslangicX, int baslangicY) : OyunNesnesi(baslangicX, baslangicY) {}
 
-    void solaHareketEt() {
-        x--; // Düşman sola hareket eder
+    void guncelle() override {
+        x--;
     }
 
-    bool vurulmaKontrol(int mermiX, int mermiY) const {
-        return (x == mermiX && y == mermiY); // Çarpışma kontrolü
+    bool ekranDisindaMi() const {
+        return x < 0;
     }
 };
 
