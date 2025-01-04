@@ -13,11 +13,10 @@ public:
     }
 
     void asagiHareketEt() {
-        if (y < 15) y++;
+        if (y < 18) y++;
     }
 
     void guncelle() override {
-        // Oyuncuya özel güncelleme mantığı buraya eklenebilir
     }
 };
 
