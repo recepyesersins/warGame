@@ -20,12 +20,10 @@ private:
     Dusman dusman;
     vector<Mermi> mermiler;
     char girdi;
-    int atisBekleme;
-    const int atisHizi;
     bool oyunDevamEdiyor;
 
 public:
-    Oyun() : oyuncu(2, 8), dusman(32, rand() % 16 + 2), atisBekleme(0), atisHizi(10), girdi('\0'), oyunDevamEdiyor(true) {}
+    Oyun() : oyuncu(2, 8), dusman(32, rand() % 16 + 2), girdi('\0'), oyunDevamEdiyor(true) {}
 
 void calistir() {
     while (oyunDevamEdiyor) {
@@ -85,7 +83,6 @@ void mermiAt() {
         }
     }
 
-    if (atisBekleme > 0) atisBekleme--;
 }
 
     void ciz() {
@@ -94,7 +91,7 @@ void mermiAt() {
         for (int y = 0; y < 20; ++y) {
             for (int x = 0; x < 34; ++x) {
                 if (x == 0 || x == 33 || y == 0 || y == 19) {
-                    cout << "-"; // Çerçeve
+                    cout << "*"; // Çerçeve
                 } else if (x == oyuncu.alX() && y == oyuncu.alY()) {
                     cout << ">"; // Oyuncu
                 } else if (x == dusman.alX() && y == dusman.alY()) {

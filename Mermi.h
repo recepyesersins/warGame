@@ -9,7 +9,7 @@ public:
     Mermi(int baslangicX, int baslangicY) : OyunNesnesi(baslangicX, baslangicY) {}
 
     void guncelle() override {
-        x += 2;
+        x ++;
     }
 
     bool ekranDisindaMi() const {
